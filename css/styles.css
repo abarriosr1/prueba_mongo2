@@ -1,0 +1,115 @@
+*{
+    margin: 0; /* para poner 0 de margen externa */
+    padding: 0; /* para poner 0 de margen interna */
+    box-sizing: border-box; /* para crear un cuadrado interno a partir del padding */
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.image-container{
+    display: flex;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+/* lo siguiente son los estilos del header, principiando con el logo*/
+
+header{
+    /*background: linear-gradient(to bottom, white 40%,red 60%);*/
+    background: white;
+    padding: 10px 10px;
+    color:white;
+}
+
+#logo {
+    width: 70px; height: 70px;
+}
+
+#logo img{
+    border-radius: 100%;
+    border: 2px solid red;
+}
+
+/* estilos del hero, esdecir de  la imagen de la computadora y m info de perfil*/
+
+#hero {
+    position: relative;
+    /*background:#ced9ec;*/
+    background: linear-gradient(to bottom, white 50%,red 55%);
+    padding: 50px 50px 10px 10px;
+    min-height: 540px;
+    width: 100%;
+}
+
+#hero .informacion-contenedor {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left:0;
+    display: flex;
+    width: 100%;
+    color: #1f1f1f;
+    padding: 50px 50px;
+}
+
+#hero .informacion-contenedor .Information {
+    margin-left: 50px;
+    font-weight: bold;
+    width: calc(100%-200px);
+}
+
+#hero .informacion-contenedor .information span {
+    display: inline-block;
+    color: #fdb6b6;
+    margin-bottom: 70px;
+}
+
+#hero .boton {
+    margin-left: 50px;
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+    width: calc(100%-200px);
+    justify-content: center;
+    margin-top: -100px;
+    list-style: none;
+    
+}
+
+#hero .social-icons .social-icon .igac
+{
+    margin-left: 400px;
+    margin-top: -128px;
+    padding: 100px 100px 100px 100px;
+    font-weight: bold;
+    width: calc(100%-200px);
+    justify-content: center;
+}
+
+
+
+
+
+/*
+#hero .informacion-contenedor .information span {
+    display: inline-block;
+    color: #fdb6b6;
+    margin-bottom: 70px;
+}
+
+estilos del main
+main{
+    
+}
+
+main .social-icons {
+    display:flex;para colocar uno al lado del otro
+    justify-content: center;
+    margin-top: 40px;
+    list-style: none;
+}
+
+*/

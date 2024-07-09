@@ -1,0 +1,118 @@
+*{
+    margin: 0; /* para poner 0 de margen externa */
+    padding: 0; /* para poner 0 de margen interna */
+    box-sizing: border-box; /* para crear un cuadrado interno a partir del padding */
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.image-container{
+    display: flex;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+/* lo siguiente son los estilos del header, principiando con el logo*/
+
+header{
+    background: #1f1f1f;
+    padding: 10px 50px;
+}
+
+#logo {
+    width: 50px;
+}
+
+#logo img{
+    border-radius: 100%;
+    border: 2px solid red;
+}
+
+/* estilos del hero, esdecir de  la imagen de la computadora y m info de perfil*/
+
+#hero {
+    position: relative;
+}
+
+#hero #computadora {
+    display: inline-block;
+    width: 100%;
+}
+
+#hero .informacion-contenedor {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left:0;
+    display: flex;
+    width: 100%;
+    color: #fff;
+    padding: 0 50px;
+}
+
+#hero .informacion-contenedor #foto {
+    width: 200px;
+}
+
+#hero .informacion-contenedor #foto img {
+    border-radius: 100%;
+}
+
+#hero .informacion-contenedor .information {
+    margin-left: 30px;
+    font-weight: bold;
+    width: calc(100%-200px);
+}
+
+#hero .informacion-contenedor .information span {
+    display: inline-block;
+    color: #fdb6b6;
+    margin-bottom: 70px;
+}
+
+/*estilos del main */
+main{
+    padding:100px;
+}
+
+main .social-icons {
+    display:flex; /* para colocar uno al lado del otro */
+    justify-content: center;
+    margin-top: 40px;
+    list-style: none;
+}
+
+main .social-icons li{
+    margin-left: 8px;  
+}
+
+main .social-icons .social-icon{
+    display:flex; /* para colocar uno al lado del otro */
+    justify-content: center;
+    align-items: center;
+    background: blue;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+main .social-icons #Linkedin {
+    background: #0077b0;
+}
+
+main .social-icons #Github {
+    background: #23272d;
+}
+
+main .social-icons #Twitter {
+    background: #1da1f2;
+}
+
+main .social-icons #Youtube {
+    background: #f70000;
+}
