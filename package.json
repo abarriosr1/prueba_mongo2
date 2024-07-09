@@ -1,0 +1,15 @@
+{
+  "name": "prueba_mongo_2",
+  "version": "1.0.0",
+  "description": "\"prueba 2 de app conectada a mongo\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "angel Barrios",
+  "license": "SEE LICENSE IN <FILE_LICENCE.TXT>",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.5.0"
+  }
+}

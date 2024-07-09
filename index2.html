@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta MongoDB</title>
+</head>
+<body>
+    <h1>Consulta a MongoDB</h1>
+    <label for="criterio">Ingrese el criterio de búsqueda:</label>
+    <input type="text" id="criterio">
+    <button onclick="buscar()">Buscar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        async function buscar() {
+            const criterio = document.getElementById('criterio').value;
+            const url = `http://localhost:3000/buscar?criterio=${criterio}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                document.getElementById('resultado').innerText = JSON.stringify(data);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta MongoDB desde Front-end</title>
+</head>
+<body>
+    <input type="text" id="fichaInput" placeholder="Ingrese el valor de ficha">
+    <button onclick="buscarEnMongoDB()">Buscar en MongoDB</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        async function buscarEnMongoDB() {
+            const ficha = document.getElementById('fichaInput').value;
+            const url = `/buscar?ficha=${ficha}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                // Mostrar resultado en la página
+                const resultadoDiv = document.getElementById('resultado');
+                resultadoDiv.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                console.error('Error al buscar en MongoDB:', error);
+            }
+        }
+    </script>
+</body>
+</html>
