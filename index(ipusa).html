@@ -40,21 +40,26 @@
         
         <!--ejemplo sencillo que devuelve el mismo valor ingresado-->
         <script>
-            function buscar_ficha() {
-                // Obtener el valor ingresado por el usuario
-                /*var dato = document.getElementById('datoInput').value;*/
-                var data = document.getElementById('datoInput', 0002000000060219000000000).value;
+            async function buscar_ficha() {
+                const ficha = document.getElementById('fichaInput').value;
+                const url = `/buscar?ficha=${ficha}`;
     
-                // Mostrar el dato en la página
-                var resultadoDiv = document.getElementById('resultado');
-                /*resultadoDiv.textContent = 'Ficha ingresada: ' + dato;*/
-                resultadoDiv.textContent = 'Recibo Predial, Factura  1726 [[1, 73483, 1726, 2544, 04/04/2024, 202201, 202412, 0002000000060219000000000, L7MzH U BRISAS, Lo 7 Mz H Ur LAS BRISAS, LOTE 7 Mz H URBANIZACION LAS BRISA, L7MzH U BRISAS, 19060788, LUIS ALBERTO MATIZ JIMENEZ, 0, 999, 0, 1, 000000000000, 000200060219000, 1242001726, 202201, ], [2, 73483, 1726, 1, IMPTO. PREDIAL UNIFICADO, Año Actual, 2544, 120, 18, 15, 18, 15, 12, 10, ], [2, 73483, 1726, 1, IMPTO. PREDIAL UNIFICADO, Años Anteriores, 2544, 226, 0, 0, 0, 0, 0, 0, ], [2, 73483, 1726, 7, CORTOLIMA, Año Actual, 2544, 36, 0, 0, 0, 0, 0, 0, ], [2, 73483, 1726, 7, CORTOLIMA, Años Anteriores, 2544, 66, 0, 0, 0, 0, 0, 0, ], [3, 73483, 1726, 1, IMPTO. PREDIAL UNIFICADO, Año Actual, 0, 12, 100, 0, 12, 100, 0, 12, 100, ], [3, 73483, 1726, 1, IMPTO. PREDIAL UNIFICADO, Años Anteriores, 90, 0, 0, 90, 0, 0, 90, 0, 0, ], [3, 73483, 1726, 7, CORTOLIMA, Año Actual, 0, 6, 100, 0, 6, 100, 0, 6, 100, ], [3, 73483, 1726, 7, CORTOLIMA, Años Anteriores, 24, 0, 0, 24, 0, 0, 24, 0, 0, ], [4, 73483, 1726, (415)7709998186378(8020)1242001726(3900)0000000544(96)20240430, }²JZgËÊ3`oq5-K!2;ÎH!!!!&MÎÈ59%?I~, (415)7709998186378(8020)1242001726(3900)0000000544(96)20240531, }²JZgËÊ3`oq5-K!2;ÎH!!!!&MÎÈ59&@Ë~, (415)7709998186378(8020)1242001726(3900)0000000550(96)20240630, "}²JZgËÊ3`oq5-K!2;ÎH!!!!&SÎÈ59?E~", ], [5, 73483, 1726, 430, 430, 436, 114, 114, 114, ], [6, 73483, 1726, 115812, 76460.00, 13/09/2023, ], [7, 73483, 1726, 2024, 3124000, ]]';
+                try {
+                    const response = await fetch(url);
+                    const data = await response.json();
+    
+                    // Mostrar resultado en la página
+                    const resultadoDiv = document.getElementById('resultado');
+                    resultadoDiv.textContent = JSON.stringify(data, null, 2);
+                } catch (error) {
+                    console.error('Error al buscar en MongoDB:', error);
+                }
             }
         </script>
         
         <!--acà es para hacerlo con archivo .js-->
-        <script src="js/script.js"></script>
-
+        <!--<script src="js/script.js"></script>-->
+        
         <ul class="social-icons">
             <li>
                 <a href="https://tramites.igac.gov.co/geltramitesyservicios/conversionNrosPrediales/convertirNrosPrediales.seam" target="blank" class="social-icon" id="igac">
