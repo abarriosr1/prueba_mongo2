@@ -1,1 +1,8 @@
-/node_modules
+# IDE
+.ini/
+.vscode/
+
+# Node
+/node_modules/
+/dist/
+/build/
