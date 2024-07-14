@@ -4,6 +4,8 @@
   "description": "\"prueba 2 de app conectada a mongo\"",
   "main": "app.js",
   "scripts": {
+    "start": "node ./server/server.js",
+    "start:dev": "nodemon ./server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "angel Barrios",
@@ -12,5 +14,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
   }
 }
