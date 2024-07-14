@@ -1,79 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="../prueba_mongo_2/css/styles.css"/>
-    <title>Impuesto Predial Municipio de Natagaima Tolima</title>
-    <!--<script src="js/script.js"></script>-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impuesto Predial Municipio de Natagaima Tolima</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+  <link type="text/css" rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <header> <!--Encabezadozado de Página-->
-        <div class="image-container" id="logo"> <!--id="titulo"--etiq para contenedores genéricos-->  
-            <!--<img width="500" height="500" src="imagenes/logo.jpg" alt="logo" /> ---Colocar imágen-->
-            <!--<img src="imagenes/logo.jpg" alt="logo" /> Colocar imágen-->
-        </div>
+
+  <div class="main__wrapper">
+    <header class="header">
+      <div class="header__logo">
+        <img class="header__logo-img" src="images/natagaima-tolima-logo-small.png" alt="logo-alcaldia" />
+      </div>
+
+      <div class="header__info">
+        <h1 class="header__info-title">Alcaldía Municipal de Natagaima Tolima</h1>
+        <h2 class="header__info-entity">Secretaria de Hacienda del Municipio de Natagaima Tolima</h2>
+        <p class="header__info-description">Consulta y descarga la Factura del Impuesto Predial del Municipio de Natagaima Tolima</p>
+      </div>
     </header>
 
-    <section id="hero">  <!--etiqueta de sección-->
+    <div class="content__wrapper">
+      <section class="search-bar">
+        <form
+          id="predialForm"
+          class="search-bar__form"
+          action="/api/predial"
+          method="GET">
+          <label class="search-bar__label" for="predialInput">Número de Ficha :</label>
+          <div id="predialInputContainer" class="search-bar__input-container">
+            <i class="search-bar__input-icon fa fa-home"></i>
+            <!-- TODO: Create custom data validation instead of using input attributes -->
+            <input
+              id="predialInput"
+              class="search-bar__input"
+              name="predialInput"
+              type="text"
+              placeholder="00 000 00 00 0000 0000 000"
+              autocomplete="off"
+              minlength="20">
+          </div>
+          <button class="search-bar__button" type="submit">Buscar</button>
+        </form>
 
-        <div class="informacion-contenedor"> 
-            <div class="image-container" id="logo" > <!--id="titulo"--etiq para contenedores genéricos con una clase-->  
-                <img src="..../prueba_mongo_2/imagenes/LOGO.jpg" alt="logo" /> <!--Colocar imágen--> 
-            </div>
-        
-            <div class="Information">
-                <h1>Alcaldía Municipal de Natagaima Tolima</h1>
-                <span>Secretaria de Hacienda del Municipio de Natagaima Tolima</span>
-
-                <p>Consulta y descarga la Factura del Impuesto Predial del Municipio de Natagaima Tolima</p>
-            </div>
+        <div class="search-bar__igac">
+          <a class="search-bar__igac-link" href="https://tramites.igac.gov.co/geltramitesyservicios/conversionNrosPrediales/convertirNrosPrediales.seam">
+            Consulte su número de ficha en el Instituto Geográfico Agustín Codazzi
+          </a>
         </div>
-    
-        <div class="boton">
-            <label for="datoInput">Ingrese Número de Ficha:</label>
-            <input type="text" id="datoInput">
-            <button onclick="buscar_ficha()" id="buscarBtn">Buscar</button>
+      </section>
+
+      <section class="data">
+        <div id="dataContainer" class="data__container"></div>
+        <div class="spinner__container">
+          <div id="spinner" class="spinner spinner--hidden"></div>
         </div>
-        <div id="resultado"></div>
-        
-        <!--ejemplo sencillo que devuelve el mismo valor ingresado-->
-        <script>
-            async function buscar_ficha() {
-                const ficha = document.getElementById('datoInput').value;
-                const url = `/buscar?ficha=${ficha}`;
-    
-                try {
-                    const response = await fetch(url);
-                    const data = await response.json();
-    
-                    // Mostrar resultado en la página
-                    const resultadoDiv = document.getElementById('resultado');
-                    resultadoDiv.textContent = JSON.stringify(data, null, 2);
-                } catch (error) {
-                    console.error('Error al buscar en MongoDB:', error);
-                }
-            }
-        </script>
-        
-        <!--acà es para hacerlo con archivo .js-->
-        <!--<script src="js/script.js"></script>-->
-        
-        <ul class="social-icons">
-            <li>
-                <a href="https://tramites.igac.gov.co/geltramitesyservicios/conversionNrosPrediales/convertirNrosPrediales.seam" target="blank" class="social-icon" id="igac">
-                    <div class="igac">
-                        <button>Obtener Número de Ficha desde Instituto Geográfico Agustín Codazzi</button>
-                    </div>
-                </a>
-            </li>
+      </section>
+    </div>
 
-    </section>
-
-    <footer>
-        <p>&copy; Creado y Diseñado por S & Y Goblal Solutions Group / Mg Angel Eduardo Barrios Rodriguez | Todos los derechos reservados</p>
+    <footer class="footer">
+      <div class="footer__copy">
+        <p>&copy; Creado y Diseñado por S &amp; Y Goblal Solutions Group</p>
+        <p>Mg Angel Eduardo Barrios Rodriguez | Todos los derechos reservados</p>
+      </div>
     </footer>
-    
+  </div>
+
+  <script src="scripts/main.js"></script>
 </body>
+
 </html>
