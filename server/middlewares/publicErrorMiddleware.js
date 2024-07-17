@@ -1,5 +1,6 @@
 const publicErrorMiddleware = (err, req, res, next) => {
-  if (res.locals.public !== true)
+  const isPublic = res.locals.public ? res.locals.public : false;
+  if (!isPublic)
     return next(err);
 
   const statusCode = res.statusCode ? res.statusCode : 500;
