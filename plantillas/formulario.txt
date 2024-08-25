@@ -1,0 +1,63 @@
+-------------------------------------------------
+
+NOMBRE_EN_FORMULARIO : modeloApp : base_de_datos
+
+-------------------------------------------------
+
+
+------------------------
+CAMPOS RECIBO
+------------------------
+
+FICHA: ficha : ficha
+FICHA_CORTA: fichaCorta : ficha_2
+PROPIETARIO: propietario
+PROPIETARIO_ID: propietarioId : cc_propietario
+
+DIRECCION_{#}: direccion{#} : direccion_{#}
+
+AREA_HA: areaHa : area
+AREA_MTS: areaMts : metros
+AREA_CONSTRUIDO: areaConstruido : construido
+MATRICULA: matricula : matricula
+ESTRATO: estrato : estrato
+
+FACTURA: factura : factura_1
+LLAVE: llave : llave
+
+FECHA_FACTURA: fechaFactura : fecha_facturacion
+
+DEBE_DESDE: debeDesde : debe_desde
+PAGO_DESDE: pagoDesde : pago_desde
+PAGO_HASTA: pagoHasta : hasta
+
+CAPITAL_CONCEPTO: capitalConcepto : concepto_capital
+CAPITAL_PERIODO: capitalPeriodo : ano_2
+CAPITAL_IMPUESTO: capitalImpuesto : impuesto
+CAPITAL_DESCUENTO_{#}: capitalDescuento{#} : desc_{#}
+CAPITAL_PORCENTAJE_DESCUENTO_{#}: capitalPorcentajeDescuento_{#} : porcentaje_desc_{#}
+
+INTERESES_CONCEPTO: interesesConcepto : concepto_intereses
+INTERESES_PERIODO: interesesPeriodo : ano_3
+INTERESES_VALOR_{#}: interesesValor{#} : interes_{#}
+INTERESES_REBAJA_{#}: interesesRebaja{#} : rebaja_{#}
+INTERESES_PORCENTAJE_REBAJA_{#}: interesesPorcentajeRebaja{#} : porcentaje_rebaja_{#}
+
+TOTAL_PAGAR_{#}: pago{#} : pago_{#}
+FECHA_PAGO_HASTA_{#}: fechaPago{#} : fecha_pago_{#}
+
+REFERENCIA: referencia : referencia
+CODIGO_BARRAS_{#}: codigoBarras{#} : num_barra_{#}
+
+
+------------------------
+CAMPOS DESPRENDIBLE
+------------------------
+
+BT_REFERENCIA: referencia : referencia
+BT_FECHA_PAGO_HASTA_{#}: fechaPago{#} : fecha_pago_{#}
+BT_TOTAL_PAGAR_{#}: pago{#} : pago_{#}
+BT_DEBE_DESDE: debeDesde : debe_desde
+BT_DEBE_HASTA: pagoHasta : hasta
+BT_FICHA: ficha : ficha
+BT_PROPIETARIO: propietario : propietario

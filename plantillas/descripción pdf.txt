@@ -1,0 +1,23 @@
+Ya ahora si, es que te estaba ordenando el archivo
+
+De todas maneras ahi esta el nombre de las "columnas", pero es asi NOMBRE_EN_FORMULARIO : modeloApp : base_de_datos
+
+El modeloApp es ummm el modelo que esta en la app (duh! jaja), pero es lo que usa mongoose para validar el tipo de datos
+que trae de la BD. Es el archivo que esta en server\models\predial.js. En realidad no lo necesitas por ahora, pero es para
+que sepas como esta conectado todo y el porque en el archivo de configuracion las variables se llaman de x forma.
+
+Si notas en el .txt hay dos "secciones" una que dice CAMPOS RECIBO y otra que dice CAMPOS_DESPRENDIBLE, recuerda que te dije
+que en el formulario PDF no se pueden repetir los nombres de los campos entonces lo que resolvi mientras encuentro una mejor
+solución es ponerle un prefijo cuando se repiten, por ejemplo:
+
+DEBE_DESDE: debeDesde : debe_desde
+BT_DEBE_DESDE: debeDesde : debe_desde
+
+si notas pues son dos campos diferentes en el formulario pero estan mappeados al mismo campo de la BD
+
+Ahora bien solo por aclarar. Yo perfectamente podria crear algo asi como 
+
+SoFiA : codigoBarras2 : num_barra_2
+
+Desde que lo indique en el archivo de configuración correctamente deberia funcionar bien. Solo que pues es mejor si nos ponemos
+como una nomenclatura, que cuando ya tengamos varios archivos pues sea facil identificar que campo es que
